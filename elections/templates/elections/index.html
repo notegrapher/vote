@@ -20,12 +20,14 @@
 			</tr>
 			</thead>
 			<tbody>
+			{% for candidate in candidates %}
 			<tr>
-				<td>a</td>
+				<td> {{ candidate.name }} </td>
+				<td> {{ candidate.introduction }} </td>
+				<td> {{ candidate.area }} </td>
+				<td> Number {{ candidate.party_number }} </td>
 			</tr>
-			<tr>
-				<td>b</td>
-			</tr>
+			{% endfor %}
 			</tbody>
 		</table>
 </body>

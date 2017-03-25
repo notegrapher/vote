@@ -6,5 +6,6 @@ from .models import Candidate
 
 def index(request):
 	candidates = Candidate.objects.all()
+	context = {'candidates' : candidates}
 
-	return render(request, 'elections/index.html')
+	return render(request, 'elections/index.html', context)
