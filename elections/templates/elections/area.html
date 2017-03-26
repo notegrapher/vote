@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>{{area}}</title>
+	<meta charset="utf-8">
+	<meta name=viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>{{area}}</h1>
+		<br>
+		{% if poll %}
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<td><B>name</B></td>
+				<td><B>introduction</B></td>
+				<td><B>area</B></td>
+				<td><B>number</B></td>
+			</tr>
+			</thead>
+			<tbody>
+			{% for candidate in candidates %}
+			<tr>
+				<td> {{ candidate.name }} </td>
+				<td> {{ candidate.introduction }} </td>
+				<td> {{ candidate.party_number }} </td>
+				<td> <form action="#" method="post"><button name="choice" value="#">choice</button></form> </td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		there's no vote
+		{% endif %}
+</body>
+
